@@ -1,0 +1,25 @@
+## 🧹 4. Data Cleaning & Validation
+
+Before analysis, the raw dataset was cleaned and validated to ensure accuracy and reliability.
+
+### ✅ Steps Taken:
+
+1. **Removed Anomalous Trips**
+   - Trips with negative or zero values in `fare_amount`, invalid `passenger_count`, or missing coordinates were removed.
+   - Flagged using a new column: `Anomaly = 1` for bad records, `Anomaly = 0` for valid trips.
+
+2. **Standardized Date & Time**
+   - Extracted `DATE`, `TIME`, `DAY`, and `HOUR` using `CAST()` and `DATEPART()` functions.
+   - Enabled flexible grouping by weekday, hour, and time windows.
+
+3. **Created Zones from Coordinates**
+   - Added `pickup_zone` and `dropoff_zone` from approximate geolocation logic or pre-mapped zones.
+
+4. **Ensured Data Integrity**
+   - Verified there are no NULLs in key analytical columns after filtering.
+   - Ensured `fare_amount` is realistic and positively correlated with distance (for future insight analysis).
+
+### 🧾 Result:
+
+- A cleaned base table with high-quality trip records marked with `Anomaly = 0`.
+- Prepared and structured data ready for meaningful analysis in later phases.

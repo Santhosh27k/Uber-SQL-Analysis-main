@@ -1,0 +1,26 @@
+## 🗂️ 3. Project Structure
+
+The project is organized into the following key components:
+
+
+### 📂 Explanation:
+
+- **README.md**  
+  This file — serves as the central documentation hub for the project.
+
+- **Uber_Trip_Analysis.sql**  
+  A single SQL script file containing all phases:
+  - Creating tables
+  - Data cleaning and validation
+  - Analytical queries
+  - Each section is marked with clear phase headers (e.g., `📌 Phase 2.1`, `📌 Phase 3.2`, etc.)
+
+- **/Visualizations** *(To be added)*  
+  Will include Power BI `.pbix` files and image exports for visual insights.
+
+- **/Data**  
+  Folder to store:
+  - Raw input files (CSV from Kaggle)
+  - Cleaned or intermediate datasets, if any were saved
+
+

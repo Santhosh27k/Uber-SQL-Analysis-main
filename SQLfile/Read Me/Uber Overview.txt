@@ -1,0 +1,25 @@
+
+# 🚖 Uber Trip Data Analysis using SQL Server
+
+A data-driven exploration of Uber trip records designed to uncover key operational insights through SQL-based querying and preprocessing.  
+This project walks through structured phases—from data cleaning and anomaly detection to zone-based trip patterns and time-based behaviors—laying a solid foundation for further visualization and reporting using Power BI.
+
+---
+
+## 📊 Overview
+
+This project demonstrates how structured SQL queries can be used to:
+
+- Clean raw trip data and validate its integrity
+- Detect and isolate anomalies using logical thresholds
+- Analyze trip behavior by time of day, day of week, and location
+- Extract meaningful trends like busiest zones and peak hours
+- Prepare for visualization using Power BI
+
+> ✅ All queries are executed in **Microsoft SQL Server**, and results are documented in the `.sql` file.
+
+---
+
+> 🔍 **Tools Used:** Microsoft SQL Server, SSMS  
+> 📅 **Year:** 2025  
+> 🧑‍💻 **Author:** Santhosh S

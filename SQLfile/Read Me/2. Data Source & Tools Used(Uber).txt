@@ -1,0 +1,33 @@
+## 🧰 2. Data Source & Tools Used
+
+### 📁 Dataset
+- **Source**: [Uber Fares Dataset on Kaggle](https://www.kaggle.com/datasets/yasserh/uber-fares-dataset)  
+  Contains trip-level data including:
+  - OrderID
+  - Key
+  - Fare amount
+  - Pickup_datetime
+  - Pickup and dropoff latitude & longitude
+  - Passenger count
+  
+- **Custom Columns Added**:
+  - `pickup_zone`, `dropoff_zone` – Mapped using coordinates
+  - `time`, `date` – Extracted from datetime for temporal analysis
+  - `Anomaly` – Flag column to filter out abnormal trips (e.g., negative fare, zero distance)
+
+### 🛠️ Tools & Technologies
+- **Microsoft SQL Server**  
+  Used for creating database, importing data, running transformations, and executing analytical queries.
+  
+- **T-SQL (Transact-SQL)**  
+  Language used for all SQL logic including data cleansing, validation, window functions, and aggregations.
+
+- **Power BI** *(for visualization – in progress)*  
+  Planned for building dashboards and visual storytelling from SQL results.
+
+- **GitHub**  
+  For version control, storing SQL files, and documenting the project publicly.
+
+### 👨‍💻 Author
+**Santhosh**  
+All SQL logic, data exploration, and project documentation are designed and implemented by Santhosh.

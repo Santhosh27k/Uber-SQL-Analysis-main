@@ -1,0 +1,163 @@
+🚖 Uber Trip Data Analysis — SQL Files Documentation
+
+
+📘 Overview
+
+This folder contains all SQL scripts developed for the Uber Trip Data Analysis Project, from database creation to Power BI integration.
+Each script focuses on a specific analytical or preparation stage in the workflow.
+
+All queries are written for Microsoft SQL Server and tested with DirectQuery Power BI connections.
+
+
+-----------------------------------------------------------------------------------
+🧩 SQL Files Description
+-----------------------------------------------------------------------------------------
+01.Uber_create_and_load_database.sql
+
+Creates the main database UberTripsDB.
+
+Defines the table structure for raw Uber trip data.
+
+Loads the dataset using BULK INSERT from a CSV file.
+
+Ensures proper data types for datetime, numeric, and geographic columns.
+
+📘 Purpose: Set up the foundational database and import raw data.
+-----------------------------------------------------------------------------------
+
+02.Uber_cleaning_and_validation.sql
+
+Handles missing, null, or invalid records.
+
+Removes entries with zero passengers, invalid fares, or corrupted coordinates.
+
+Adds derived fields for Date, Time, and DayOfWeek.
+
+Performs initial data validation checks (row count, null checks).
+
+📘 Purpose: Improve dataset quality and ensure reliability before analysis.
+-----------------------------------------------------------------------------
+
+03.Uber_Phase-Anomaly.sql
+
+Identifies Outliner based on set condtion.
+
+Prepares anomaly tables for review.
+
+📘 Purpose: Find potential errors, fraudulent records, or efficiency outliers.
+-------------------------------------------------------------------------
+
+04.Uber_DataAnalysis.sql
+
+Performs demand and fare trend analysis.
+
+Aggregates data by time, day, and passenger count.
+
+Calculates trip distance using Haversine formula.
+
+Generates summaries like:
+
+Average fare by hour
+
+Peak demand times
+
+Distance–fare correlation
+
+📘 Purpose: Core analytical logic — generates insights for Power BI.
+---------------------------------------------
+
+05.Uber_Viewpoint_for_PowerBi.sql
+
+Creates SQL views used in Power BI DirectQuery mode:
+
+vw_TripImbalance
+
+vw_PassengerCount
+
+vw_TripCountByDayOfWeek
+
+Top_Zone_by_Hour
+
+Each view summarizes specific aspects like trip trends, passenger load, and zone imbalance.
+
+📘 Purpose: Provide Power BI–ready views for real-time visualization.
+---------------------------------------------------------------------------------------------------
+
+
+Uber_data_analysis(extra).sql
+--------------------------
+
+Contains experimental or advanced queries used during exploration.
+
+Includes temporary views and additional joins used for testing new insights.
+
+
+Uber(extra).sql
+----------------------
+
+Early draft file containing preliminary checks and raw exploration logic.
+
+📘 Purpose: Backup or supplementary analysis scripts.
+--------------------------------------------------------------------------------------------------------
+
+⚙️ Execution Order
+---------
+
+Run the scripts sequentially for smooth execution:
+
+01.Uber_create_and_load_database.sql
+02.Uber_cleaning_and_validation.sql
+03.Uber_Phase-Anomaly.sql
+04.Uber_DataAnalysis.sql
+05.Uber_Viewpoint_for_PowerBi.sql
+
+----------------------------------------------------------------------------------------------------------
+
+🧠 Analytical Focus------
+-----------------
+
+Data Cleaning & Validation
+
+Anomaly Detection
+
+Demand & Fare Trend Analysis
+
+Passenger Distribution
+
+Zone Imbalance Insights
+
+---
+
+🪄 Example Insight Query---------
+
+SELECT 
+    DATENAME(WEEKDAY, pickup_datetime) AS DayName,
+    COUNT(*) AS TotalTrips,
+    AVG(fare_amount) AS AvgFare
+FROM UberData
+GROUP BY DATENAME(WEEKDAY, pickup_datetime)
+ORDER BY TotalTrips DESC;
+
+
+📊 Shows busiest weekday and average fare per day.
+
+------------------------------------------------------------------
+
+🧾 Notes-----------------
+
+Designed for SQL Server with DirectQuery Power BI integration.
+
+Ensure that dataset path in BULK INSERT matches your local CSV file location.
+
+All views created here feed directly into the Power BI dashboard.
+
+----------------------------------------------------------------------------------------------
+
+👤 Author
+
+Project: Uber Trip Data Analysis
+Author: Santhosh S
+Github :
+LindIn : www.linkedin.com/in/santhosh-s-219287228
+Year: 2025
+Tools: Microsoft SQL Server, Power BI
